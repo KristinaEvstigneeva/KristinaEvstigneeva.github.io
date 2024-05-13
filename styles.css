@@ -32,14 +32,17 @@ body {
 h1 {
     font-weight: bold;
     color: #000;
-}
 .team-members {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row; /* Горизонтальное расположение */
 }
 .team-member {
     margin-right: 5rem; /* Расстояние между изображениями */
+}
+.team-member:last-child {
+    margin-right: 0; /* Убираем правый отступ у последнего изображения */
 }
 .team-member img {
     width: 300px; /* Выберите подходящую ширину */
