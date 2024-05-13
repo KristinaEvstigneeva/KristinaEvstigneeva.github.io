@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
 .navbar {
     background-color: #1a1a1a;
     height: 50px;
@@ -13,6 +14,7 @@ body {
     z-index: 999;
     border-bottom: 5px solid #006400; /* зеленый цвет темного оттенка */
 }
+
 .navbar a {
     color: #fff;
     font-size: 16px;
@@ -22,21 +24,26 @@ body {
     line-height: 50px;
     padding: 0 10px;
 }
+
 .navbar a:hover {
     color: #00ff00;
 }
+
 .content {
     margin-top: 60px; /* чтобы контент не перекрывал верхнюю полосу */
     text-align: center;
 }
+
 h1 {
     font-weight: bold;
     color: #000;
 }
+
 .team-members {
     display: flex;
     justify-content: space-around; /* равномерное распределение по горизонтали */
 }
+
 .team-member {
     position: relative;
     margin: 0 5px; /* Расстояние между изображениями */
@@ -44,15 +51,19 @@ h1 {
     max-width: 280px; /* Максимальная ширина изображения */
     padding: 5px; /* Внутренний отступ для рамки */
 }
+
 .team-member img {
     width: 100%; /* Изображение займет всю доступную ширину */
     height: 450px; /* Максимальная высота изображения */
 }
+
 .member-name {
     position: absolute;
-    bottom: 10px; /* Немного подвигаем текст вверх */
+    bottom: 0; /* Немного подвигаем текст вниз */
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 10px; /* Отступ от изображения */
+    font-weight: bold; /* Делаем текст жирным */
 }
 
 .member-name a {
