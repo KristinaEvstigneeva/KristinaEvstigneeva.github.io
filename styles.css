@@ -62,7 +62,7 @@ h1 {
     bottom: 0; /* Немного подвигаем текст вниз */
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 50px; /* Отступ от изображения */
+    margin-top: 100px; /* Отступ от изображения */
     font-weight: bold; /* Делаем текст жирным */
 }
 
