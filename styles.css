@@ -33,9 +33,16 @@ h1 {
     font-weight: bold;
     color: #000;
 }
+.team-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-member {
+    margin-right: 5rem; /* Расстояние между изображениями */
+}
 .team-member img {
     width: 300px; /* Выберите подходящую ширину */
     height: auto; /* Автоматический расчет высоты */
     border: 2px solid #006400; /* Зеленая рамка */
-    margin-right: 30px; /* Отступ между изображениями */
 }
