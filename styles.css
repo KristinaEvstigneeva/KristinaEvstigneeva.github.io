@@ -32,20 +32,18 @@ body {
 h1 {
     font-weight: bold;
     color: #000;
+}
 .team-members {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; /* Горизонтальное расположение */
+    justify-content: space-around; /* равномерное распределение по горизонтали */
 }
 .team-member {
-    margin-right: 5rem; /* Расстояние между изображениями */
-}
-.team-member:last-child {
-    margin-right: 0; /* Убираем правый отступ у последнего изображения */
+    margin: 0 5px; /* Расстояние между изображениями */
+    border: 2px solid #006400; /* Зеленая рамка */
+    max-width: 250px; /* Максимальная ширина изображения */
+    padding: 5px; /* Внутренний отступ для рамки */
 }
 .team-member img {
-    width: 300px; /* Выберите подходящую ширину */
+    width: 100%; /* Изображение займет всю доступную ширину */
     height: auto; /* Автоматический расчет высоты */
-    border: 2px solid #006400; /* Зеленая рамка */
 }
