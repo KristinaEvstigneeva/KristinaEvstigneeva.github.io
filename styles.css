@@ -38,28 +38,12 @@ h1 {
     justify-content: space-around; /* равномерное распределение по горизонтали */
 }
 .team-member {
-    position: relative;
     margin: 0 5px; /* Расстояние между изображениями */
+    border: 2px solid #006400; /* Зеленая рамка */
     max-width: 280px; /* Максимальная ширина изображения */
     padding: 5px; /* Внутренний отступ для рамки */
 }
 .team-member img {
     width: 100%; /* Изображение займет всю доступную ширину */
     height: 450px; /* Максимальная высота изображения */
-}
-.member-name {
-    position: absolute;
-    bottom: 10px; /* Немного подвигаем текст вверх */
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 100px; /* Добавляем отступ сверху */
-}
-
-.member-name a {
-    color: #000; /* Чёрный цвет текста */
-    text-decoration: underline; /* Подчеркивание */
-}
-
-.member-name a:hover {
-    color: #00ff00; /* Зелёный цвет текста при наведении */
 }
