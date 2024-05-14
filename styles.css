@@ -52,7 +52,7 @@ h1 {
     bottom: 10px; /* Немного подвигаем текст вверх */
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 10px; /* Добавляем отступ сверху */
+    margin-top: 100px; /* Добавляем отступ сверху */
 }
 
 .member-name a {
