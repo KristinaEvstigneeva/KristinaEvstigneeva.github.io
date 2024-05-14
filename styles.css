@@ -51,3 +51,21 @@ h1 {
     color: #000; /* Черный цвет текста */
     font-weight: bold; /* Жирный шрифт */
 }
+
+.intro-text {
+    width: 70%; /* Процентное значение от ширины окна браузера */
+    margin: auto; /* Центрирование блока */
+    text-align: justify; /* Выравнивание текста по ширине */
+    font-family: Times New Roman, serif; /* Изменение шрифта */
+    margin-top: 50px; /* Отступ сверху */
+    font-size: 18px; /* Размер шрифта */
+}
+.intro-text h1 {
+    font-family: Arial, sans-serif; /* Изменение шрифта заголовка */
+    font-size: 32px; /* Размер заголовка */
+    font-weight: bold; /* Жирное начертание */
+    color: #000; /* Черный цвет текста */
+}
+.intro-text p {
+    margin-bottom: 20px; /* Отступ снизу каждого абзаца */
+}
