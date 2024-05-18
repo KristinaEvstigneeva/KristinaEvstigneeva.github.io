@@ -66,6 +66,14 @@
             list-style-type: none;
             padding: 0;
         }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +105,7 @@
                 <p>To achieve these objectives, we adopted a structured approach:</p>
                 <ul>
                     <ul>
-                    <li>1) <strong>Initial Exploration:</strong> BWe began by exploring the ArCo knowledge graph to identify relevant topics and concepts. 
+                    <li>1) <strong>Initial Exploration:</strong> We began by exploring the ArCo knowledge graph to identify relevant topics and concepts. 
 </li>
                     <li>2) <strong>Query Formulation:</strong> Based on our initial exploration, we formulated SPARQL queries to extract specific data related to cultural properties that connect Russia and Italy.
 </li>
@@ -108,7 +116,15 @@
                    <div class="initialexploration">
                 <h3>Initial Exploration</h3>
                 <p>We began by exploring the ArCo knowledge graph to identify relevant topics and concepts. This involved a detailed examination of the ontology modules. </p>
-                <ul>
+                <p style="text-align: center;"><strong>Query Example 1</strong></p>
+                <table>
+                    <tr>
+                        <td><img src="Query1.jpg" alt="Query Example 1"></td>
+                        <td>Question: What cultural events are associated with specific geographical features?<br>
+                        Purpose: This query aims to retrieve cultural events linked to various geographical features, ordered by event name. This helps us understand the distribution and variety of cultural events within the ArCo knowledge graph.<br>
+                        Result</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
