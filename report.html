@@ -6,86 +6,101 @@
     <title>Our Team</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #1a1a1a;
-            height: 50px;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            border-bottom: 5px solid #006400; /* зеленый цвет темного оттенка */
-        }
-        .navbar a {
-            color: #fff;
-            font-size: 16px;
-            text-decoration: none;
-            margin-right: 20px;
-            display: inline-block;
-            line-height: 50px;
-            padding: 0 10px;
-        }
-        .navbar a:hover {
-            color: #00ff00;
-        }
-        .content {
-            margin-top: 60px; /* чтобы контент не перекрывал верхнюю полосу */
-            text-align: center;
-        }
-        h1 {
-            font-weight: bold;
-            color: #000;
-        }
-        .text-section {
-            text-align: left;
-            padding: 20px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .text-section img {
-            float: left;
-            margin-right: 20px;
-            width: 8cm;
-            height: 8cm;
-            margin-bottom: -5px; /* Расстояние между картинкой и следующим текстом */
-        }
-        .text-section p {
-            overflow: hidden;
-        }
-        .objectives {
-            margin-left: 1cm; /* Отступ от левого края */
-        }
-        .objectives h3 {
-            text-align: center;
-            font-weight: bold;
-        }
-        .objectives ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-        /* Added CSS to remove underlining from text links */
-.member-name a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the color from parent */
-    font-weight: bold; /* Make the text bold */
-}
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .navbar {
+        background-color: #1a1a1a;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        border-bottom: 5px solid #006400; /* зеленый цвет темного оттенка */
+    }
+    .navbar a {
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        margin-right: 20px;
+        display: inline-block;
+        line-height: 50px;
+        padding: 0 10px;
+    }
+    .navbar a:hover {
+        color: #00ff00;
+    }
+    .content {
+        margin-top: 60px; /* чтобы контент не перекрывал верхнюю полосу */
+        text-align: center;
+    }
+    h1 {
+        font-weight: bold;
+        color: #000;
+    }
+    .text-section {
+        text-align: left;
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .text-section img {
+        float: left;
+        margin-right: 20px;
+        width: 8cm;
+        height: 8cm;
+        margin-bottom: -5px; /* Расстояние между картинкой и следующим текстом */
+    }
+    .text-section p {
+        overflow: hidden;
+    }
+    .objectives {
+        margin-left: 1cm; /* Отступ от левого края */
+    }
+    .objectives h3 {
+        text-align: center;
+        font-weight: bold;
+    }
+    .objectives ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+    /* Added CSS to remove underlining from text links */
+    .member-name a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit the color from parent */
+        font-weight: bold; /* Make the text bold */
+    }
 
-/* Apply green color when hovered over */
-.member-name a:hover {
-    color: #00ff00; /* Change color to green on hover */
-}
-        }
+    /* Apply green color when hovered over */
+    .member-name a:hover {
+        color: #00ff00; /* Change color to green on hover */
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex-item {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .flex-item img {
+        width: 100%;
+        height: auto;
+    }
     </style>
 </head>
 <body>
@@ -102,8 +117,14 @@
         <div class="text-section">
             <h2 style="font-weight: bold; font-family: 'Times New Roman', Times, serif;">Methodology</h2>
             <p><strong>Project Overview</strong></p>
-            <img src="CulturalEventGrapg.jpg" alt="Cultural Event Graph">
-            <p>Our project, "Exploring Cultural Bonds: Russia and Italy," is an in-depth study aimed at uncovering and analyzing the rich cultural connections between these two nations. Utilizing the ArCo knowledge base and large language models, we set out to identify, understand, and document the historical, cultural, and social ties that bind Russia and Italy.</p>
+            <div class="flex-container">
+    <div class="flex-item">
+        <img src="CulturalEventGrapg.jpg" alt="Cultural Event Graph">
+    </div>
+    <div class="flex-item">
+        <p>Our project, "Exploring Cultural Bonds: Russia and Italy," is an in-depth study aimed at uncovering and analyzing the rich cultural connections between these two nations. Utilizing the ArCo knowledge base and large language models, we set out to identify, understand, and document the historical, cultural, and social ties that bind Russia and Italy.</p>
+    </div>
+</div>
             <div class="objectives">
                 <h3>Objectives</h3>
                 <ul>
