@@ -49,11 +49,6 @@
         .normal-text {
             font-weight: normal;
         }
-        .sparql-query {
-            float: right;
-            margin-top: 20px;
-            margin-right: 20px;
-        }
     </style>
 </head>
 <body>
@@ -78,24 +73,7 @@
 
         <img class="bottom-image" src="https://cdn.tripster.ru/thumbs2/91844230-b2ad-11ed-8339-7ea21234fb5c.1220x600.jpeg" alt="Bottom Image">
 
-        <p class="normal-text">Initially, I created a SPARQL query to determine if there is information about the year of my event</p>
-
-        <div class="sparql-query">
-            <p>PREFIX arco: <https://w3id.org/arco/ontology/cultural-event/></p>
-            <p>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#></p>
-            <p>PREFIX ti: <https://w3id.org/italia/onto/TI/></p>
-
-            <p>SELECT ?event ?eventName ?time</p>
-            <p>WHERE {</p>
-            <p>    ?event a cis:CulturalEvent ;</p>
-            <p>           rdfs:label ?eventName ;</p>
-            <p>           ti:time ?time .</p>
-            <p>    FILTER (?event = <https://w3id.org/arco/resource/CulturalEvent/cc2a13b81e7c225f96471f8a377689cd>)</p>
-            <p>}</p>
-
-            <p><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" target="_blank">Results</a></p>
-        </div>
+        <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
     </div>
 </body>
 </html>
-
