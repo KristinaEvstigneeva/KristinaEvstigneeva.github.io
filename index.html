@@ -4,129 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            background-color: #1a1a1a;
-            height: 50px;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            border-bottom: 5px solid #006400; /* зеленый цвет темного оттенка */
-        }
-        .navbar a {
-            color: #fff;
-            font-size: 16px;
-            text-decoration: none;
-            margin-right: 20px;
-            display: inline-block;
-            line-height: 50px;
-            padding: 0 10px;
-        }
-        .navbar a:hover {
-            color: #00ff00;
-        }
-        .content {
-            margin-top: 60px; /* чтобы контент не перекрывал верхнюю полосу */
-            text-align: center;
-        }
-        h1 {
-            font-weight: bold;
-            color: #000;
-        }
-        .text-section {
-            text-align: left;
-            padding: 20px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .text-section img {
-            float: left;
-            margin-right: 20px;
-            width: 8cm;
-            height: 8cm;
-            margin-bottom: 5px; /* Расстояние между картинкой и следующим текстом */
-        }
-        .text-section p {
-            overflow: hidden;
-        }
-        .objectives {
-            margin-left: 1cm; /* Отступ от левого края */
-        }
-        .objectives h3 {
-            text-align: center;
-            font-weight: bold;
-        }
-        .objectives ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем файл стилей -->
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">Homepage</a>
-        <a href="kristina.html">Kristina</a>
-        <a href="iuliia.html">Iuliia</a>
-        <a href="alena.html">Alena</a>
-        <a href="elena.html">Elena</a>
-        <a href="report.html">Report</a>
-        <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0ASELECT+DISTINCT+*+%0D%0AWHERE+%7B+%0D%0A++%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++rdfs%3Alabel+%3Flabel+.+%0D%0A++%3FculturalEvent+a+cis%3ACulturalEvent+%3B++%0D%0A+++++++++++++++++clv%3AhasSpatialCoverage+%3Fplace+%3B+%0D%0A+++++++++++++++++rdfs%3Alabel+%3FeventName%0D%0A%7D+%0D%0AORDER+BY+DESC%28%3FeventName%29%0D%0ALIMIT+200%0D%0AOFFSET+10%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Report</a>
+        <a href="#">Homepage</a>
+        <a href="#kristina">Kristina</a>
+        <a href="#iuliia">Iuliia</a>
+        <a href="#alena">Alena</a>
+        <a href="#elena">Elena</a>
+        <a href="#report">Report</a>
     </div>
     <div class="content">
-        <h1>REPORT</h1>
-        <div class="text-section">
-            <h2 style="font-weight: bold; font-family: 'Times New Roman', Times, serif;">Methodology</h2>
-            <p><strong>Project Overview</strong></p>
-            <img src="CulturalEventGrapg.jpg" alt="Cultural Event Graph">
-            <p>Our project, "Exploring Cultural Bonds: Russia and Italy," is an in-depth study aimed at uncovering and analyzing the rich cultural connections between these two nations. Utilizing the ArCo knowledge base and large language models, we set out to identify, understand, and document the historical, cultural, and social ties that bind Russia and Italy.</p>
-            <div class="objectives">
-                <h3>Objectives</h3>
-                <ul>
-                    <ul>
-                    <li>1) <strong>Identify Cultural Connections:</strong> Discover and document significant cultural events that highlight the interactions and influences between Russia and Italy.</li>
-                    <li>2) <strong>Leverage Modern Technologies:</strong> Use advanced technologies such as the AInitial Explorationlanguage models to enhance our research capabilities and provide richer insights.</li>
-                    <li>3) <strong>Create New Knowledge Triples:</strong> Expand the existing knowledge base by creating new data connections and enriching the ArCo knowledge graph with additional contextual information.</li>
-                    <ul>
-                    <div class="approach">
-                <h3>Approach</h3>
-                <p>To achieve these objectives, we adopted a structured approach:</p>
-                <ul>
-                    <ul>
-                    <li>1) <strong>Initial Exploration:</strong> We began by exploring the ArCo knowledge graph to identify relevant topics and concepts. 
-</li>
-                    <li>2) <strong>Query Formulation:</strong> Based on our initial exploration, we formulated SPARQL queries to extract specific data related to cultural properties that connect Russia and Italy.
-</li>
-                    <li>3) <strong>Data Analysis:</strong> We analyzed the extracted data to identify relationships, and key themes. This included verifying the accuracy and relevance of the data.
-</li>
-                    <li>4) <strong>LLM Integration:</strong> We integrated and compared two Large Language Models (LLMs) such as ChatGPT and Mistral to retrieve additional information and provide context, further enriching the knowledge graph.
-</li>
-                   <div class="initialexploration">
-                <h3>Initial Exploration</h3>
-                <p>We began by exploring the ArCo knowledge graph to identify relevant topics and concepts. This involved a detailed examination of the ontology modules. </p>
+        <h1>OUR TEAM</h1>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="Kristina.jpg" alt="Kristina">
+                <div class="member-name"><a href="#kristina">Kristina</a></div>
             </div>
-            <p style="text-align: center;"><strong>Query Example 1</strong></p>
-            <table style="margin-left: auto; margin-right: auto;">
-                <tr>
-                    <td><img src="Query1.jpg" alt="Query Example 1"></td>
-                    <td><strong>Question:</strong> What cultural events are associated with specific geographical features?<br>
-                    <strong>Purpose:</strong>This query aims to retrieve cultural events linked to various geographical features, ordered by event name. This helps us understand the distribution and variety of cultural events within the ArCo knowledge graph.<br>
-                   <strong>Result<strong></td>
-                </tr>
-            </table>
+            <div class="team-member">
+                <img src="Juja.jpg" alt="Iuliia">
+                <div class="member-name"><a href="#iuliia">Iuliia</a></div>
+            </div>
+            <div class="team-member">
+                <img src="Alenaj.jpg" alt="Alena">
+                <div class="member-name"><a href="#alena">Alena</a></div>
+            </div>
+            <div class="team-member">
+                <img src="Elena.jpg" alt="Elena">
+                <div class="member-name"><a href="#elena">Elena</a></div>
+            </div>
+        </div>
+        <div class="intro-text">
+            <h1 style="font-family: Arial, sans-serif;">Exploring Cultural Bonds: Russia and Italy</h1>
+            <p>Welcome!</p>
+            <p>We are delighted to welcome you to our website dedicated to exploring the cultural connections between Russia and Italy. Our project, "Exploring Cultural Bonds," combines a unique blend of the ArCo knowledge base and large language models to delve deep into this subject.</p>
+            <p>Through the technical skills and dedication of our team, we aim to broaden understanding of the historical, cultural, and social ties between these two great nations. Our work spans a wide range of aspects, including identifying key themes, creating new knowledge triples, and analyzing results obtained using various language models.</p>
+            <p>The project offers a unique opportunity to immerse yourself in the exploration of the rich cultural heritage of Russia and Italy through the lens of modern technologies and scientific approaches.</p>
+            <p>We invite you to explore with us!</p>
         </div>
     </div>
 </body>
