@@ -61,7 +61,7 @@
         <a href="elena.html">Elena</a>
         <a href="report.html">Report</a>
     </div>
-  <div class="content">
+ <div class="content">
     <h1>IULIIA</h1>
     <!-- Здесь будет содержимое страницы -->
     <h1> About the cultural event</h1>
@@ -77,10 +77,10 @@
     <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
 
     <!-- Вставляем таблицу -->
-    <table>
+    <table style="border: 2px solid black;">
         <tr>
-            <td><img src="query1_iuliia.png" alt="Query 1 Image"></td>
-            <td style="padding-left: 20px;">
+            <td style="border: 2px solid black;"><img src="query1_iuliia.png" alt="Query 1 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
                 <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
                 <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
             </td>
