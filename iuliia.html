@@ -111,6 +111,13 @@
                 <p style="margin-bottom: 10px;">Now, I have decided to explore the various cultural entities present at my event. My initial search yielded only one painting. Subsequently, I asked ChatGPT about other artworks featured in the exhibition.</p>
                 <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FculturalEntity+%3FentityLabel%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++cis%3AinvolvesCulturalEntity+%3FculturalEntity+.%0D%0A++++%3FculturalEntity+rdfs%3Alabel+%3FentityLabel+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0AORDER+BY+%3FentityLabel%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
             </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query6_iuliia.png" alt="Query 6 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">One of them turned out to be Paolo Veneziano's painting, "Madonna and Child with Angels" that alreadu exist in ArCo.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0ASELECT+DISTINCT+%3Fsub+%3Fslabel%0D%0AWHERE%0D%0A%7B+%0D%0A++++%3Fcp+a-cd%3AhasSubject+%3Fsub+.%0D%0A++++%3Fsub+a+a-cd%3ASubject+%3B%0D%0A+++++++++rdfs%3Alabel+%3Fslabel+.%0D%0A++++FILTER%28REGEX%28%3Fslabel%2C+%22Paolo+Veneziano%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
 </tr>
     </table>
 </div>
