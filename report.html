@@ -175,7 +175,7 @@
             <p style="text-align: center;"><strong>Query Example 3</strong></p>
             <table style="margin-left: auto; margin-right: auto;">
                 <tr>
-                    <td><img src="Query3.jpg" alt="Query Example 3"></td>
+                    <td><img src="Query4.jpg" alt="Query Example 3"></td>
                     <td><strong>Question:</strong> What are the specific cultural events linked to Moscow, Russia, or Saint Petersburg?<br>
                     <strong>Purpose:</strong>This query retrieves detailed information about cultural events connected to these locations, providing insights into the specific events and their geographical context. This data is crucial for understanding the cultural interactions between Russia and Italy.<br>
                    <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E+%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E+%0D%0A%0D%0ASELECT+DISTINCT+%3Fplace+%3Fevent+%3FeventName%0D%0AWHERE+%0D%0A%7B+%0D%0A%3Fplace+a+cis%3AGeographicalFeature++%0D%0A%7B+%3Fplace+rdfs%3Alabel+%22Mosca%22+%7D+%0D%0AUNION+%0D%0A%7B+%3Fplace+rdfs%3Alabel+%22Russia%22+%7D+%0D%0AUNION++%0D%0A%7B+%3Fplace+rdfs%3Alabel+%22San+Pietroburgo%22%7D+%0D%0A%3Fplace+rdfs%3Alabel+%3FplaceLabel+.%0D%0A%3Fevent+a+cis%3ACulturalEvent+%3B++%0D%0A+++++++++++++++++++++++++++++clv%3AhasSpatialCoverage+%3Fplace+%3B+%0D%0A++++++++++++++++++++++++++++rdfs%3Alabel+%3FeventName%0D%0A%7D+%0D%0AORDER+BY+ASC%28%3FeventName%29+%0D%0ALIMIT+100+%0D%0A%0D%0A+&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
