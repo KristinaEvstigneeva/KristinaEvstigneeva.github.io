@@ -75,4 +75,26 @@
 
      <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
     <p class="normal-text" style="text-align: left; margin-left: 20px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
-</div>
+
+    <!-- Добавленный SPARQL-код -->
+    <div>
+        <p class="normal-text" style="text-align: left; margin-left: 20px;">PREFIX arco: <a href="https://w3id.org/arco/ontology/cultural-event/" target="_blank">https://w3id.org/arco/ontology/cultural-event/</a></p>
+        <p class="normal-text" style="text-align: left; margin-left: 20px;">PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#" target="_blank">http://www.w3.org/2000/01/rdf-schema#</a></p>
+        <p class="normal-text" style="text-align: left; margin-left: 20px;">PREFIX ti: <a href="https://w3id.org/italia/onto/TI/" target="_blank">https://w3id.org/italia/onto/TI/</a></p>
+        <pre>
+SELECT ?event ?eventName ?time
+WHERE {
+    ?event a cis:CulturalEvent ;
+           rdfs:label ?eventName ;
+           ti:time ?time .
+    FILTER (?event = &lt;<a href="https://w3id.org/arco/resource/CulturalEvent/cc2a13b81e7c225f96471f8a377689cd" target="_blank">https://w3id.org/arco/resource/CulturalEvent/cc2a13b81e7c225f96471f8a377689cd</a>&gt;)
+}
+        </pre>
+    </div>
+    <!-- Конец добавленного SPARQL-кода -->
+      </div>
+
+<!-- Добавленный код -->
+<a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" target="_blank">RESULTS</a>
+</body>
+</html>
