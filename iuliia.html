@@ -97,14 +97,7 @@
         <td style="border: 2px solid black; padding-left: 20px;">
             <p style="margin-bottom: 10px;">According to the results of the second query, we see that the organizer is not indicated, so I asked ChatGPT who is the organizer of the event - the Pushkin Museum in Moscow and checked if there is an organizer at all in the ArCo ontology with the tag "museo". It turned out that there is not.</p>
             <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Forganizer+%3ForganizerName%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+.%0D%0A++++%3Forganizer+rdfs%3Alabel+%3ForganizerName+.%0D%0A++++FILTER%28REGEX%28%3ForganizerName%2C+%22museo%22%2C+%22i%22%29%29%0D%0A%7D%0D%0AORDER+BY+%3ForganizerName&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
-  </td>
-        </tr>
-        <tr>
-    <td style="border: 2px solid black;"><img src="query4_iuliia.png" alt="Query 4 Image" style="float: left;"></td>
-            <td style="border: 2px solid black; padding-left: 20px;">
-                <p style="margin-bottom: 10px;">So now we can create a new triplet as it does not yet exist in the existing ontology. The provided RDF representation describes a cultural event titled "Rossija-Italija, Italia-Russia: Skvoz' veka Ot Dzotto do Malevica," organized by "Museo Puškin delle belle arti." The event is identified as a arco:CulturalEvent and includes details such as the title (dc:title), organizer (dc:creator), location (clv:hasSpatialCoverage), and event date (ti:time). Additionally, the location "Mosca" is specified as a clv:GeographicalFeature with a corresponding label (rdfs:label). This structured format allows for precise identification and querying of the event's key attributes within RDF-compatible systems.</p>
-            </td>
-        </tr>
+    </td>
+</tr>
     </table>
-</body>
-</html>
+</div>
