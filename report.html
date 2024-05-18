@@ -126,7 +126,18 @@
                    <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0ASELECT+DISTINCT+*+%0D%0AWHERE+%7B+%0D%0A++%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++rdfs%3Alabel+%3Flabel+.+%0D%0A++%3FculturalEvent+a+cis%3ACulturalEvent+%3B++%0D%0A+++++++++++++++++clv%3AhasSpatialCoverage+%3Fplace+%3B+%0D%0A+++++++++++++++++rdfs%3Alabel+%3FeventName%0D%0A%7D+%0D%0AORDER+BY+DESC%28%3FeventName%29%0D%0ALIMIT+200%0D%0AOFFSET+10%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
                 </tr>
             </table>
-        </div>
+            <div class="initialexploration">
+                <p><strong>Query Formulation</strong></p>
+ <p>Based on our initial exploration, we formulated SPARQL queries to extract specific data related to cultural properties that connect Russia and Italy. </p>
     </div>
+    <p style="text-align: center;"><strong>Query Example 2</strong></p>
+            <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td><img src="Query2.jpg" alt="Query Example 2"></td>
+                    <td><strong>Question:</strong> Are there any cultural events linked to Moscow, Russia, or Saint Petersburg?<br>
+                    <strong>Purpose:</strong>This ASK query checks if there are cultural events associated with these specific locations. It helps us determine the presence of relevant data before proceeding with more detailed queries.<br>
+                   <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0AASK++%0D%0AWHERE+%7B+%0D%0A++%7B+%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.+%0D%0A++++%3Fplace+rdfs%3Alabel+%22Mosca%22+.+%0D%0A++%7D+%0D%0A++UNION+%0D%0A++%7B+%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.+%0D%0A++++%3Fplace+rdfs%3Alabel+%22Russia%22+.+%0D%0A++%7D+%0D%0A++UNION+%0D%0A++%7B+%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.+%0D%0A++++%3Fplace+rdfs%3Alabel+%22San+Pietroburgo%22+.+%0D%0A++%7D+%0D%0A%7D&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
+                </tr>
+            </table>
 </body>
 </html>
