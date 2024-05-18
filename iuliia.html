@@ -83,6 +83,13 @@
             <td style="border: 2px solid black; padding-left: 20px;">
                 <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
                 <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
+           </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query2_iuliia.png" alt="Query 2 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">According to the results of the first request, we see that the year of the event is indicated, so the second request was aimed at finding out whether the organizers of the event are specified.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+%3Forganizer+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on" style="color: #00ff00;">RESULTS</a>
             </td>
         </tr>
     </table>
