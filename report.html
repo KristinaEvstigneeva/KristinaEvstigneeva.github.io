@@ -74,6 +74,18 @@
             border: 1px solid black;
             padding: 8px;
         }
+        /* Added CSS to remove underlining from text links */
+.member-name a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from parent */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Apply green color when hovered over */
+.member-name a:hover {
+    color: #00ff00; /* Change color to green on hover */
+}
+        }
     </style>
 </head>
 <body>
@@ -148,5 +160,14 @@
                    <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+*+%0D%0AWHERE+%7B+%0D%0A++%3Fplace+a+cis%3AGeographicalFeature+.++%0D%0A++%7B+%3Fplace+rdfs%3Alabel+%22Mosca%22+%7D+%0D%0A++UNION+%0D%0A++%7B+%3Fplace+rdfs%3Alabel+%22Russia%22+%7D+%0D%0A++UNION++%0D%0A++%7B+%3Fplace+rdfs%3Alabel+%22San+Pietroburgo%22+%7D+%0D%0A++%3FculturalEvent+a+cis%3ACulturalEvent+%3B++%0D%0A+++++++++++++++++clv%3AhasSpatialCoverage+%3Fplace+%3B+%0D%0A+++++++++++++++++rdfs%3Alabel+%3FeventName+.%0D%0A++OPTIONAL+%7B+%3Fplace+rdfs%3Alabel+%3FplaceLabel+%7D+.%0D%0A%7D+%0D%0AORDER+BY+DESC%28%3Fplace%29%0D%0ALIMIT+100&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
                 </tr>
             </table>
+            <div class="initialexploration">
+                <h3>Next Steps</h3>
+                <p>After identifying relevant cultural events, each team member selected a specific event for further study. These events will be explored in detail, with individual reports provided by each member:
+</p>
+<div class="member-name"><a href="kristina.html">⚫ Kristina</a></div>
+<div class="member-name"><a href="iuliia.html">⚫ Iuliia</a></div>
+<div class="member-name"><a href="alena.html">⚫ Alena</a></div>
+<div class="member-name"><a href="elena.html">⚫ Elena</a></div>
+</div>
 </body>
 </html>
