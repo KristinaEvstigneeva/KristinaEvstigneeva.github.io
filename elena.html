@@ -89,3 +89,20 @@
 <p class="normal-text">On this page below, I demonstrate how I tried to enrich the ontology and gave an example of requests through the SPARQL Query Editor.
 </p>
 
+<!-- Вставляем таблицу -->
+<table style="border: 1px solid black;">
+    <tr>
+        <td style="border: 1px solid black;"><img src="file:///Users/elena/Desktop/1.png" alt="Query 1 Image" style="width: 250%; max-width: 350px;"></td>
+        <td style="border: 1px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">The query retrieved information about cultural events associated with the geographical feature "Mosca".</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+*%0D%0AWHERE+%7B%0D%0A%3Fplace+a+cis%3AGeographicalFeature+%3B%0D%0Ardfs%3Alabel+%22Mosca%22+.%0D%0A%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0Aclv%3AhasSpatialCoverage+%3Fplace+%3B%0D%0Ardfs%3Alabel+%3FeventLabel%0D%0A%7D%0D%0AORDER+BY+DESC%28%3FeventLabel%29%0D%0ALIMIT+100%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 2px solid black;"><img src="file:///Users/elena/Desktop/2.png" alt="Query 2 Image" style="width: 250%; max-width: 350px;"></td>
+        <td style="border: 2px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">I decided to find information about a past event in Russia. From the ontology, we know the year and the city. I was using this information in my request in order to enrich graphs.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0D%0APREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0D%0APREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0D%0ASELECT+%3Fevent+%3Flocation+%3Fdate%0D%0AWHERE+%7B%0D%0A++%3Fevent+dbo%3Alocation+dbr%3AMosca+%3B+%0D%0A+++++++dbp%3Ayear+%222011%22+%3B+++++++++%0D%0A+++++++foaf%3Aname+%22Il+Tesoro+dei+Medici%22+%3B++%0D%0A+++++++dbp%3Alocation+%3Flocation+%3B+++%0D%0A+++++++dbp%3Adate+%3Fdate+.+++++++++%0D%0A%7D%0D%0ALIMIT+5%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
+        </td>
+    </tr>
+</table>
