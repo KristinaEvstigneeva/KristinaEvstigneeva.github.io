@@ -42,13 +42,13 @@
         }
         .flex-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start; /* выравнивание контейнеров по левому краю */
             align-items: flex-start;
             gap: 20px;
             flex-wrap: wrap;
         }
         .flex-item {
-            width: 40%; /* Уменьшение размера контейнера с картинкой */
+            width: 300px; /* Ширина контейнера с картинкой, как у Kristina.jpg */
             text-align: justify;
         }
         .flex-item img {
@@ -56,7 +56,7 @@
             height: auto;
         }
         .text-container {
-            width: 40%; /* Уменьшение ширины контейнера с текстом */
+            width: calc(100% - 320px); /* Уменьшение ширины контейнера с текстом на ширину изображения + gap */
             display: flex;
             align-items: center; /* Выравнивание текста по высоте картинки */
             text-align: justify; /* Выравнивание текста по ширине */
