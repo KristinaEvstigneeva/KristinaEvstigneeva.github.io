@@ -143,11 +143,27 @@ WHERE {
     As a next step, we search for one of the paintings in Arco: Based on this request, we can attempt to identify one of the paintings that were featured in the exhibition.
 </p>    
 <!-- Вставляем таблицу после текста -->
-        <table style="border: 2px solid black;">
-        <tbody><tr>
-            <td style="border: 2px solid black;"><img src="query.alena3.png" alt="Query 3 Image"></td>
-            <td style="border: 2px solid black; padding-left: 20px;">
-                <p style="margin-bottom: 10px;">However, we notice that this painting is not present in Arco. By adding information about it, we can enrich Arco's knowledge graph.</p>
+        <table style="border: 2px solid black; width: 100%;">
+    <tr>
+        <td style="border: 2px solid black; padding: 20px; vertical-align: top; width: 50%;">
+<pre style="font-size: 14px;">
+PREFIX a-ce: <https://w3id.org/arco/ontology/cultural-event/> 
+PREFIX cis: <http://dati.beniculturali.it/cis/> 
+PREFIX core: <https://w3id.org/arco/ontology/core/> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
+
+SELECT DISTINCt ?CulturalEntity ?CulturalEventLabel
+WHERE { 
+  ?event a cis:CulturalEvent ; 
+         cis:involvesCulturalEntity ?CulturalEntity . 
+  ?CulturalEntity rdfs:label ?CulturalEventLabel 
+  FILTER(REGEX(?CulturalEventLabel, " Danaë", "i"))
+}
+</pre>
+        </td>
+        <td style="border: 2px dark green; padding: 20px; width: 50%;">
+            <p style="margin-bottom: 10px;">However, we notice that this painting is not present in Arco. By adding information about it, we can enrich Arco's knowledge graph.</p>
                 <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fsite+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++cis%3AhasHostedBy+%3Fsite+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+arco%3Abc97a7dc940c9f758745592666b47eb1%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
             </td>
         </tr>
