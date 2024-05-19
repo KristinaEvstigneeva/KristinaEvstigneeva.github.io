@@ -308,7 +308,7 @@
                     </p>
                      <p>
                     <strong>Purpose:</strong><br>
-                        This query aims to identify the cultural entities involved in the cultural event within the ArCo knowledge graph. Specifically I wanted to find out if there's a painting "Cristo che porta la croce" in the database.The FILTER clause is utilized to narrow down the results based on a specific condition, searching for entities whose label matches the string "CCristo che porta la croce" in a case-insensitive manner.   
+                        This query aims to identify the cultural entities involved in the cultural event within the ArCo knowledge graph. Specifically I wanted to find out if there's a painting "Cristo che porta la croce" in the database.The FILTER clause is utilized to narrow down the results based on a specific condition, searching for entities whose label matches the string "Cristo che porta la croce" in a case-insensitive manner.   
                     </p>
                     <p>
                         <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+a-ce%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E+%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+core%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcore%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0A%0D%0ASELECT+DISTINCt+%3FCulturalEntity+%0D%0AWHERE+%7B+%0D%0A++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++cis%3AinvolvesCulturalEntity+%3FCulturalEntity+.+%0D%0A++%3FCulturalEntity+rdfs%3Alabel+%3FCulturalEventLabel+%0D%0A++FILTER%28REGEX%28%3FCulturalEntity%2C+%22Cristo+che+porta+la+croce%22%2C+%22i%22%29%29%0D%0A%7D+&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong>
@@ -316,3 +316,10 @@
                 </td>
             </tr>
         </table>
+
+<p class="left-align"><strong>Third step conclusion and new Triples</strong></p>
+<p class="steps-paragraph">Considering the absence of data on these paintings in the ArCo database system, we can enrich the ontology with the additional information and make new triples:</p>
+<ul style="list-style-type: none; padding-left: 0;">
+    <li style="text-align: left;"> 1) https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694 <span style="background-color: lightgreen;">cis:involvesCulturalEntity</span> https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo in casa di Marta Maria e Lazzaro</li>
+    <li style="text-align: left;">2) https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694 <span style="background-color: lightgreen;">cis:involvesCulturalEntity</span> https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo che porta la croce</li>
+</ul>
