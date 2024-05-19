@@ -59,6 +59,29 @@
             text-align: justify;
             margin: 0 0 10px 0; /* отступы между абзацами */
         }
+        .steps-paragraph {
+            text-align: justify;
+        }
+        .step-table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid #000; /* черная рамка */
+        }
+        .step-table td {
+            padding: 10px;
+            vertical-align: top;
+            border: 1px solid #000; /* черная рамка внутри ячеек */
+        }
+        .step-table img {
+            width: 8cm;
+            height: 8cm;
+            object-fit: cover;
+        }
+        .step-table p {
+            text-align: justify;
+            margin: 0 0 10px 0; /* отступы между абзацами */
+        }
     </style>
 </head>
 <body>
@@ -88,6 +111,34 @@
                     </p>
                     <p>
                         His workshop in Bassano became a significant artistic center, where his sons and pupils, including Francesco Bassano the Younger, continued his artistic legacy. Jacopo Bassano's contributions to Renaissance art continue to be celebrated for their technical prowess, emotional resonance, and innovative approach to composition and storytelling.
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <h3>STEPS</h3>
+        <p class="steps-paragraph">I wanted to begin with retrieving new information about my event and decided to use the following SPARQL query:</p>
+        <table class="step-table">
+            <tr>
+                <td>
+                    <img src="step1Kristina.jpg" alt="Step 1">
+                </td>
+                <td>
+                    <p>
+                        <strong>Purpose of the Query</strong><br>
+                        This SPARQL DESCRIBE query aims to retrieve a detailed description of a specific resource within a dataset. In this case, the resource is a cultural event identified by the URI "cis:ff397346680a8ea36e725601302e3694".
+                    </p>
+                    <p>
+                        <strong>What the Query Seeks to Discover</strong><br>
+                        The query seeks to discover all the information available about the cultural event with the given identifier. The result of the query is an HTML5 document with embedded RDF statements represented using HTML+Microdata notation. Here’s the detailed information:
+                    </p>
+                    <p>
+                        <strong>rdf:type</strong>: Indicates that the resource is of type "CulturalEvent" (cis:CulturalEvent).<br>
+                        <strong>rdfs:label</strong>: The label or title of the event is "Jacopo Bassano".<br>
+                        <strong>cis:involvesCulturalEntity</strong>: The event involves a cultural entity identified by n8:1201007835.<br>
+                        <strong>clvapit:hasSpatialCoverage</strong>: The event has spatial coverage, identified by n6:d3e863b4c91bff6d3a274e923e9e5968.<br>
+                        <strong>tiapit:time</strong>: The event took place from 2005 to 2006.<br>
+                        <strong>l0:name</strong>: Another name for the event is "Jacopo Bassano".<br>
+                        <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+cis%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2F%3E+%0D%0ADESCRIBE+cis%3Aff397346680a8ea36e725601302e3694%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
                     </p>
                 </td>
             </tr>
