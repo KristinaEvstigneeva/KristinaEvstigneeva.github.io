@@ -147,8 +147,6 @@ WHERE {
     <tr>
         <td style="border: 2px solid black; padding: 20px; vertical-align: top;">
 <pre style="font-size: 14px;">
-define sql:big-data-const 0
-#output-format:text/html
 PREFIX a-ce: <https://w3id.org/arco/ontology/cultural-event/>
 PREFIX cis: <http://dati.beniculturali.it/cis/>
 PREFIX core: <https://w3id.org/arco/ontology/core/>
@@ -165,7 +163,7 @@ WHERE {
 </pre>
         </td>
         <td style="border: 2px solid black; padding: 20px;">
-            <p style="margin-bottom: 10px;">We notice that this painting is present in Arco. But there is no information about the site (the Pushkin Museum)</p>
+            <p style="margin-bottom: 10px;">We notice that this painting is present in Arco. But there is no information about the site (the Pushkin Museum).</p>
             <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+a-ce%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+core%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcore%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FCulturalEntity+%3FCulturalEventLabel%0D%0AWHERE+%7B+%0D%0A++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++cis%3AinvolvesCulturalEntity+%3FCulturalEntity+.+%0D%0A++%3FCulturalEntity+rdfs%3Alabel+%3FCulturalEventLabel+.%0D%0A++FILTER%28REGEX%28%3FCulturalEventLabel%2C+%22Danae%22%2C+%22i%22%29%29%0D%0A%7D&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
             </td>
         </tr>
