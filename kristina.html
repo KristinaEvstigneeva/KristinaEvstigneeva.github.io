@@ -40,6 +40,21 @@
             font-weight: bold;
             color: #000;
         }
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .flex-item {
+            width: 45%; /* чтобы текст и картинка были одинаковой ширины */
+            text-align: left;
+        }
+        .flex-item img {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -56,9 +71,13 @@
         <!-- Здесь будет содержимое страницы -->
         <h1> About the cultural event</h1>
         <h2>Jacopo Bassano</h2>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="Jacopo.jpg" alt="Jacopo Bassano" style="width: 50%; height: auto;">
-            <p style="width: 50%;">Jacopo Bassano, whose real name was Jacopo dal Ponte, was an Italian Renaissance painter born around 1510 in the town of Bassano del Grappa, in the Venetian Republic. He was renowned for his distinct style and significant contributions to the Venetian school of painting. Bassano's artistic career flourished during the 16th century, a period marked by the Renaissance's peak in Italy. He was known for his religious paintings, portraits, and genre scenes, often depicting biblical narratives and pastoral settings with remarkable naturalism and detail. His workshop in Bassano became a significant artistic center, where his sons and pupils, including Francesco Bassano the Younger, continued his artistic legacy. Jacopo Bassano's contributions to Renaissance art continue to be celebrated for their technical prowess, emotional resonance, and innovative approach to composition and storytelling.</p>
+        <div class="flex-container">
+            <div class="flex-item">
+                <img src="Jacopo.jpg" alt="Jacopo Bassano">
+            </div>
+            <div class="flex-item">
+                <p>Jacopo Bassano, whose real name was Jacopo dal Ponte, was an Italian Renaissance painter born around 1510 in the town of Bassano del Grappa, in the Venetian Republic. He was renowned for his distinct style and significant contributions to the Venetian school of painting.</p><p>Bassano's artistic career flourished during the 16th century, a period marked by the Renaissance's peak in Italy. He was known for his religious paintings, portraits, and genre scenes, often depicting biblical narratives and pastoral settings with remarkable naturalism and detail.</p><p>His workshop in Bassano became a significant artistic center, where his sons and pupils, including Francesco Bassano the Younger, continued his artistic legacy. Jacopo Bassano's contributions to Renaissance art continue to be celebrated for their technical prowess, emotional resonance, and innovative approach to composition and storytelling.</p>
+            </div>
         </div>
     </div>
 </body>
