@@ -145,26 +145,33 @@ WHERE {
 <!-- Вставляем таблицу после текста -->
         <table style="border: 2px solid black; width: 100%;">
     <tr>
-        <td style="border: 2px solid black; padding: 20px; vertical-align: top; width: 50%;">
+        <td style="border: 2px solid black; padding: 20px; vertical-align: top;">
 <pre style="font-size: 14px;">
-PREFIX a-ce: <https://w3id.org/arco/ontology/cultural-event/> 
-PREFIX cis: <http://dati.beniculturali.it/cis/> 
-PREFIX core: <https://w3id.org/arco/ontology/core/> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
+PREFIX arco: &lt;https://w3id.org/arco/ontology/cultural-event/&gt;
+PREFIX l0: &lt;https://w3id.org/italia/onto/l0/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX clv: &lt;https://w3id.org/italia/onto/CLV/&gt;
+PREFIX a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt;
 
-SELECT DISTINCt ?CulturalEntity ?CulturalEventLabel
+SELECT ?event ?eventLabel ?agent ?agentLabel
 WHERE { 
   ?event a cis:CulturalEvent ; 
-         cis:involvesCulturalEntity ?CulturalEntity . 
-  ?CulturalEntity rdfs:label ?CulturalEventLabel 
-  FILTER(REGEX(?CulturalEventLabel, " Danaë", "i"))
+         rdfs:label ?eventLabel .
+  OPTIONAL {
+    ?event core:hasAgentRole ?agentRole .
+    ?agentRole core:hasAgent ?agent . 
+    ?agent rdfs:label ?agentLabel .
+  }
+  FILTER (str(?eventLabel) = "Tiziano")
 }
+LIMIT 10
 </pre>
         </td>
-        <td style="border: 2px dark green; padding: 20px; width: 50%;">
+        <td style="border: 2px solid black; padding: 20px;">
             <p style="margin-bottom: 10px;">However, we notice that this painting is not present in Arco. By adding information about it, we can enrich Arco's knowledge graph.</p>
-                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fsite+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++cis%3AhasHostedBy+%3Fsite+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+arco%3Abc97a7dc940c9f758745592666b47eb1%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fsite+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++cis%3AhasHostedBy+%3Fsite+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+arco%3Abc97a7dc940c9f758745592666b47eb1%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
             </td>
         </tr>
         <tr>
