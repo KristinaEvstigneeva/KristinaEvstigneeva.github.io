@@ -99,10 +99,28 @@ LIMIT 10
         </td>
     </tr>
     <tr>
-        <td style="border: 2px solid black;">
-            <img src="query.alena2.png" alt="Query 2 Image" style="width: 375px;">
+     <table style="border: 2px solid black; width: 100%;">
+    <tr>
+        <td style="border: 2px solid black; padding: 20px; vertical-align: top;">
+<pre style="font-size: 14px;">
+PREFIX arco: <https://w3id.org/arco/ontology/cultural-event/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ti: <https://w3id.org/italia/onto/TI/>
+PREFIX cis: <http://dati.beniculturali.it/cis/>
+PREFIX clv: <https://w3id.org/italia/onto/CLV/>
+
+SELECT DISTINCT ?site 
+WHERE {
+    ?event a cis:CulturalEvent ;
+           rdfs:label ?eventName ;
+           cis:hasHostedBy ?site ;
+           clv:hasSpatialCoverage ?place .
+    ?place rdfs:label ?city .
+    FILTER (?event = arco:bc97a7dc940c9f758745592666b47eb1)
+}
+</pre>
         </td>
-        <td style="border: 2px solid black; padding-left: 20px;">
+        <td style="border: 2px solid black; padding: 20px;">
             <p style="margin-bottom: 10px;">We also notice that Arco lacks information about the site. The site is the Pushkin Museum, located at ul. Volkhonka, 12 in Moscow. We can add this information as well.</p>
             <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fsite+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++cis%3AhasHostedBy+%3Fsite+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+arco%3Abc97a7dc940c9f758745592666b47eb1%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
         </td>
