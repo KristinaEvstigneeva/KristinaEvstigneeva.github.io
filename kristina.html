@@ -323,3 +323,65 @@
     <li style="text-align: left;"> 1) https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694 <span style="background-color: lightgreen;">cis:involvesCulturalEntity</span> https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo in casa di Marta Maria e Lazzaro</li>
     <li style="text-align: left;">2) https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694 <span style="background-color: lightgreen;">cis:involvesCulturalEntity</span> https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo che porta la croce</li>
 </ul>
+
+
+
+
+<p class="left-align"><strong>Fourth step</strong></p>
+<p class="steps-paragraph">Next, I decided to utilize different information provided by LLM, specifically focusing on Saint Petersburg and Hermitage. I constructed a queries to retrieve data (if there is any) related to Saint Petersburg and Hermitage from the ArCo database. </p>
+<table class="step-table">
+            <tr>
+                <td>
+                    <img src="step4Kristina.jpg" alt="Step 4">
+                </td>
+                <td>
+                    <p>
+                        <strong>Question:</strong><br>
+                        What does the RDF graph describing the geographical feature "San Pietroburgo" look like?
+                    </p>
+                     <p>
+                    <strong>Purpose:</strong><br>
+                        This query constructs an RDF graph representing the geographical feature labeled "San Pietroburgo". By specifying the structure and conditions for retrieval, it helps understand how St. Petersburg's geographical feature is represented in the dataset.  
+                    </p>
+                    <p>
+                        <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0ACONSTRUCT++%7B+%0D%0A%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++++++++rdfs%3Alabel+%22San+Pietroburgo%22+%0D%0A%7D+%0D%0AWHERE+%7B+%0D%0A%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++++++++rdfs%3Alabel+%22San+Pietroburgo%22+%0D%0A%7D+%0D%0ALIMIT+100+%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong>
+                    </p>
+                    <p>
+                    <strong>Conclusion and new Triples:</strong><br>
+                        Considering that there is an information in ArCo about St. Petersburgint (but very limited according to the query) and with the help of LLM we know that some paintings of Jacopo Bassano are presented there, we can make a new triple:</p>
+<p>https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694<span style="background-color: lightgreen;">clv:hasSpatialCoverage</span> https://w3id.org/arco/resource/GeographicalFeature/SanPietroburgo</p>
+                </td>
+            </tr>
+        </table>
+        
+        
+        
+<p class="steps-paragraph">Next, I constructed a query to retrieve data related to cultural events associated with the Hermitage Museum (if there are any). The query searches for cultural events within the ArCo database, specifically looking for events that have a time and location label containing the term 'hermitage'. The use of the FILTER clause with a case-insensitive regular expression ensures that any relevant events, regardless of capitalization, are included in the results. This approach helps to identify and analyze cultural events connected to the Hermitage Museum.</p>
+<table class="step-table">
+            <tr>
+                <td>
+                    <img src="step5Kristina.jpg" alt="Step 5">
+                </td>
+                <td>
+                    <p>
+                        <strong>Question:</strong><br>
+                        What cultural events are associated with the Hermitage Museum?
+                    </p>
+                     <p>
+                    <strong>Purpose:</strong><br>
+                        This query retrieves cultural events linked to the Hermitage Museum by searching for events with location labels containing the term "hermitage". By specifying the structure and conditions for retrieval, it helps understand how events at the Hermitage Museum are represented in the dataset.</p>
+                    <p>
+                        <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0ACONSTRUCT++%7B+%0D%0A%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++++++++rdfs%3Alabel+%22San+Pietroburgo%22+%0D%0A%7D+%0D%0AWHERE+%7B+%0D%0A%3Fplace+a+cis%3AGeographicalFeature+%3B++%0D%0A+++++++++++++++rdfs%3Alabel+%22San+Pietroburgo%22+%0D%0A%7D+%0D%0ALIMIT+100+%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong>
+                    </p>
+                    <p>
+                    <strong>Conclusion and new Triples:</strong><br>
+                        Considering that there is no information present now in ArCo about Hermitage Museum, we can help enrichinf the ontology and make several new triples:</p>
+<p>1)https://w3id.org/arco/resource/CulturalEvent/ff397346680a8ea36e725601302e3694<span style="background-color: lightgreen;">a-ce:eventTimeLocation</span>https://w3id.org/arco/ontology/cultural-event/eventTimeLocation/Hermitage
+</p>
+<p>2)https://w3id.org/arco/ontology/cultural-event/eventTimeLocation/Hermitage<span style="background-color: lightgreen;">cis:involvesCulturalEntity</span>https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo che porta la croce
+</p>
+<p>3)https://w3id.org/arco/ontology/cultural-event/eventTimeLocation/Hermitage<span style="background-color: lightgreen;">cis:involvesCulturalEntity</span>https://w3id.org/arco/resource/HistoricOrArtisticProperty/Cristo in casa di Marta Maria e Lazzaro
+</p>
+                </td>
+            </tr>
+        </table>
