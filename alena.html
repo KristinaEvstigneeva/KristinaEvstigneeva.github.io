@@ -105,11 +105,11 @@ When we navigate to a page with available information, we notice that not all th
 <table style="border: 1px solid black;">
     <tr>
         <td style="border: 1px solid black; padding-right: 20px;">
-            <img src="query.alena3.png" alt="Query 3 Image" style="width: 150%; max-width: 350px;">
+            <img src="query.alena3.png" alt="Query 3 Image" style="width: 250%; max-width: 350px;">
         </td>
         <td style="border: 1px solid black;">
             <p style="margin-bottom: 10px;">"However, we notice that this painting is not present in Arco. By adding information about it, we can enrich Arco's knowledge graph</p>
-            <a href="#">Link to Results</a>
+            <a href="#"><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fsite+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++cis%3AhasHostedBy+%3Fsite+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+arco%3Abc97a7dc940c9f758745592666b47eb1%29%0D%0A%7D%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a></a>
         </td>
     </tr>
 </table>
