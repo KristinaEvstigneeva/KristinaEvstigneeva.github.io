@@ -165,7 +165,7 @@
             <p>One of the notable pieces by Jacopo Bassano housed in Russia is "The Adoration of the Shepherds," which is part of the collection at the State Hermitage Museum in Saint Petersburg. This painting showcases Bassano's mastery of light and composition, depicting a tender moment of adoration by shepherds towards the newborn Christ.</p>
             <p>Another significant work is "Christ in the House of Mary and Martha," which can also be found in the State Hermitage Museum. This painting illustrates a biblical scene with intricate details and expressive characters, reflecting Bassano's skill in capturing human emotions and storytelling.</p>
             <p>While these are just a couple of examples, they highlight the presence of Jacopo Bassano's art within Russian cultural institutions, enriching the country's artistic heritage with Renaissance masterpieces.</p>
-            <p style="font-size: 0.7em;"><em>(During this search we didn’t have an opportunity to apply different setting for temperature or tokens. As a result the answer is rather ‘’creative’’ and large)</em></p>
+            <p style="font-size: 0.7em;"><em>(During this search we didn’t have an opportunity to apply different setting for temperature or tokens. As a result the answer is rather ‘’creative’’ and large. Here we used <mark style="background-color: #ccffcc;">Zero-shot Prompting</mark> - This technique involves asking the model to perform a task without providing any examples. It relies on the model's pre-trained knowledge.)</em></p>
         </td>
         <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
             <p>I don't have real-time access to databases or art collections, but according to various sources, some of the works attributed to Jacopo Bassano (also known as Jacobello da Ponte) can be found in Russian museums. Here are a few examples:</p>
@@ -199,7 +199,7 @@
     <br>Example:
     <br>1) "Mona Lisa" by Leonardo da Vinci
     <br>2) "Starry Night" by Vincent van Gogh
-    <br>3) "The Last Supper" by Leonardo da Vinci) - Few-shot prompting)</em></p>
+    <br>3) "The Last Supper" by Leonardo da Vinci) - Here we used <mark style="background-color: #ccffcc;">Few-shot prompting</mark> - In this approach, you provide a few examples of the task within the prompt to help the model understand the context and desired output.)</em></p>
 </td>
 <tr>
     <td colspan="2" style="text-align: center; border: 1px solid #000;"><strong>Third question: Could you transform this description into RDF format and use Arco ontology?</strong></td>
@@ -222,7 +222,12 @@
     <p>rdfs:label "The Adoration of the Shepherds" ;</p>
     <p>arco:depicts ex:Christ ;</p>
     <p>arco:createdBy ex:JacopoBassano</p>
-            <p style="font-size: 0.7em;"><em>(After this result I decided to give it a couple of examples of working queries)</em></p>
+            <p style="font-size: 0.7em;"><em>(After this result I decided to use another prompting technique <mark style="background-color: #ccffcc;">Chain-of-Thought Prompting</mark> - This technique involves breaking down the reasoning process into a sequence of steps, guiding the model to follow a logical path to arrive at the answer.
+<p style="font-size: 0.7em;"><em>Example: "To understand SPARQL, follow these steps:
+1) SPARQL is a query language used to retrieve data stored in RDF format.
+2) It allows users to write queries using patterns of triples.
+3) By using keywords like OPTIONAL, FILTER, and UNION, SPARQL can perform complex searches.
+4)Example - as an example I gave the LLM some working SPARQL queries)</em></p>
 <ol start="2"><p><li>RDF for "The Adoration of the Shepherds»:</p></ol>
 <p>PREFIX arco:https://w3id.org/arco/ontology/cultural-event/</p>
 <p>PREFIX rdfs:http://www.w3.org/2000/01/rdf-schema#</p>
