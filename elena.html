@@ -162,3 +162,68 @@ tr:nth-child(even) {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 9px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Request</th>
+    <th>Result</th>
+ 
+  </tr>
+  <tr>
+    <td> 
+       
+ <p><pre>PREFIX arco: <<a href="url">https://w3id.org/arco/ontology/cultural-event/></a>
+    <p>PREFIX rdfs: <<a href="url">http://www.w3.org/2000/01/rdf-schema#></a>
+    <p>PREFIX ti: <<a href="url">https://w3id.org/italia/onto/TI></a>
+    <p>PREFIX cis: <<a href="url">http://dati.beniculturali.it/cis</a>
+    <p>PREFIX clv: <<a href="url">https://w3id.org/italia/onto/CLV</a>
+
+<p>SELECT ?organizer 
+<p>WHERE {
+    <p>?event a cis:CulturalEvent ;
+           <p>rdfs:label ?eventName ;
+           <p>arco:hasEventOrganiser ?organizer ;
+           <p>clv:hasSpatialCoverage ?place .
+    <p>?place rdfs:label ?city .
+    <p><p>FILTER (?event = <<a href="url">https://dati.beniculturali.it/lodview-arco/resource/CulturalEvent/4c88dc5e0662f98f9c0ff26a0b51e4d3.html</a>>)
+<p>}
+<p>LIMIT 10
+    
+    </td>
+    <td><pre>Chat GPT said that the organizer of the exhibition was famous Galleria degli Uffizi. I decided to create a request in the SPARQL Query Editor in order to find this information or enrich the ontology.</td>
+   
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+   
+ 
+  </tr>
+</table>
+
+</body>
+</html>
