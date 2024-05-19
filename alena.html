@@ -67,12 +67,33 @@
 When we navigate to a page with available information, we notice that not all the information is presented.  <a href="https://dati.beniculturali.it/lodview-arco/resource/CulturalEvent/bc97a7dc940c9f758745592666b47eb1.html">REFERENCE</a>
 </p>
 <!-- Вставляем таблицу -->
-<table style="border: 2px solid black;">
+<table style="border: 2px solid black; width: 100%;">
     <tr>
-        <td style="border: 2px solid black;">
-            <img src="query.alena1.png" alt="Query 1 Image" style="width: 375px;">
+        <td style="border: 2px solid black; padding: 20px; vertical-align: top;">
+<pre style="font-size: 14px;">
+PREFIX arco: &lt;https://w3id.org/arco/ontology/cultural-event/&gt;
+PREFIX l0: &lt;https://w3id.org/italia/onto/l0/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX clv: &lt;https://w3id.org/italia/onto/CLV/&gt;
+PREFIX a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt;
+
+SELECT ?event ?eventLabel ?agent ?agentLabel
+WHERE { 
+  ?event a cis:CulturalEvent ; 
+         rdfs:label ?eventLabel .
+  OPTIONAL {
+    ?event core:hasAgentRole ?agentRole .
+    ?agentRole core:hasAgent ?agent . 
+    ?agent rdfs:label ?agentLabel .
+  }
+  FILTER (str(?eventLabel) = "Tiziano")
+}
+LIMIT 10
+</pre>
         </td>
-        <td style="border: 2px solid black; padding-left: 20px;">
+        <td style="border: 2px solid black; padding: 20px;">
             <p style="margin-bottom: 10px;">Based on information from the internet, we know that Professor Giovanni Villa, who acts as an agent, was the curator of this event. We can add this information to enrich Arco.</p>
             <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+l0%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2Fl0%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+core%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcore%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0APREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventLabel+%3Fagent+%3FagentLabel%0D%0AWHERE+%7B+%0D%0A++%3Fevent+a+cis%3ACulturalEvent+%3B+%0D%0A+++++++++rdfs%3Alabel+%3FeventLabel+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fevent+core%3AhasAgentRole+%3FagentRole+.%0D%0A++++%3FagentRole+core%3AhasAgent+%3Fagent+.+%0D%0A++++%3Fagent+rdfs%3Alabel+%3FagentLabel+.%0D%0A++%7D%0D%0A++FILTER+%28str%28%3FeventLabel%29+%3D+%22Tiziano%22%29%0D%0A%7D%0D%0ALIMIT+10%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">RESULTS</a>
         </td>
