@@ -5,6 +5,268 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team</title>
     <style>
+            body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #1a1a1a;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 5px solid #006400; /* зеленый цвет темного оттенка */
+        }
+        .navbar a {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            margin-right: 20px;
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 10px;
+        }
+        .navbar a:hover {
+            color: #00ff00;
+        }
+        .content {
+            margin-top: 60px; /* чтобы контент не перекрывал верхнюю полосу */
+            text-align: center;
+        }
+        h1 {
+            font-weight: bold;
+            color: #000;
+        }
+        .bottom-image {
+            margin-top: 20px; /* добавим отступ от текста */
+        }
+        .italic-text {
+            font-style: italic;
+        }
+        .normal-text {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Homepage</a>
+        <a href="kristina.html">Kristina</a>
+        <a href="iuliia.html">Iuliia</a>
+        <a href="alena.html">Alena</a>
+        <a href="elena.html">Elena</a>
+        <a href="report.html">Report</a>
+    </div>
+    <div class="content">
+        <h1>IULIIA</h1>
+        <!-- Здесь будет содержимое страницы -->
+        <h1> About the cultural event</h1>
+        <h2>Russia-Italy, Italy-Russia: Through the Centuries From Giotto to Malevich</h2>
+    <p class="italic-text">It is a remarkable exhibition that explores the rich and dynamic cultural exchanges between Russia and Italy over several centuries. This exhibition showcases masterpieces from renowned artists, tracing the artistic dialogues and influences from the Italian Renaissance to the Russian Avant-Garde.</p>
+<p class="italic-text">Visitors will journey through time, witnessing the evolution of artistic styles and the profound impact these two nations have had on each other’s cultural landscapes. Featuring works from Giotto, a master of the early Italian Renaissance, to Kazimir Malevich, a pioneer of abstract art in Russia, this exhibition highlights the continuous and reciprocal artistic inspiration that has shaped the art world.</p>
+<p class="italic-text">Through paintings, sculptures, and multimedia installations, the exhibition offers a unique perspective on the interconnected histories and artistic achievements of these two great cultures.</p>
+<img class="bottom-image" src="https://cdn.tripster.ru/thumbs2/91844230-b2ad-11ed-8339-7ea21234fb5c.1220x600.jpeg" alt="Bottom Image">
+<p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
+<!-- Вставляем таблицу -->
+        <table style="border: 2px solid black;">
+        <tbody><tr>
+            <td style="border: 2px solid black;"><img src="query1_iuliia.png" alt="Query 1 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+           </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query2_iuliia.png" alt="Query 2 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">According to the results of the first request, we see that the year of the event is indicated, so the second request was aimed at finding out whether the organizers of the event are specified.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+%3Forganizer+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+    <td style="border: 2px solid black;"><img src="query3_iuliia.png" alt="Query 3 Image" align="left"></td>
+        <td style="border: 2px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">According to the results of the second query, we see that the organizer is not indicated, so I asked ChatGPT who is the organizer of the event - the Pushkin Museum in Moscow and checked if there is an organizer at all in the ArCo ontology with the tag "museo". It turned out that there is not.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Forganizer+%3ForganizerName%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+.%0D%0A++++%3Forganizer+rdfs%3Alabel+%3ForganizerName+.%0D%0A++++FILTER%28REGEX%28%3ForganizerName%2C+%22museo%22%2C+%22i%22%29%29%0D%0A%7D%0D%0AORDER+BY+%3ForganizerName&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+    </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query4_iuliia.png" alt="Query 2 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">So now we can creat a new triplet as it does not yet exist in ontology. The provided RDF representation describes a cultural event titled "Rossija-Italija, Italia-Russia: Skvoz' veka Ot Dzotto do Malevica" organized by "Museo Puškin delle belle arti." The event is identified as a arco:CulturalEvent and includes details such as the title (dc:title), organizer (dc:creator), location (clv:hasSpatialCoverage), and event date (ti:time). Additionally, the location "Mosca" is specified as a clv:GeographicalFeature with a corresponding label (rdfs:label). This structured format allows for precise identification and querying of the event's key attributes within RDF-compatible systems.</p>
+        </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query5_iuliia.png" alt="Query 5 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Now, I have decided to explore the various cultural entities present at my event. My initial search yielded only one painting. Subsequently, I asked ChatGPT about other artworks featured in the exhibition.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FculturalEntity+%3FentityLabel%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++cis%3AinvolvesCulturalEntity+%3FculturalEntity+.%0D%0A++++%3FculturalEntity+rdfs%3Alabel+%3FentityLabel+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0AORDER+BY+%3FentityLabel%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query6_iuliia.png" alt="Query 6 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">One of them turned out to be Paolo Veneziano's painting, "Madonna and Child with Angels" that already exist in ArCo.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0ASELECT+DISTINCT+%3Fsub+%3Fslabel%0D%0AWHERE%0D%0A%7B+%0D%0A++++%3Fcp+a-cd%3AhasSubject+%3Fsub+.%0D%0A++++%3Fsub+a+a-cd%3ASubject+%3B%0D%0A+++++++++rdfs%3Alabel+%3Fslabel+.%0D%0A++++FILTER%28REGEX%28%3Fslabel%2C+%22Paolo+Veneziano%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query7_iuliia.png" alt="Query 7 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Thus, we can enhance the ontology by creating a new triplet to link the cultural entity with the event.</p>
+            </td>
+</tr>
+    </tbody></table>
+    <div class="content">
+    <h1>IULIIA</h1>
+    <!-- Здесь будет содержимое страницы -->
+    <h1> About the cultural event</h1>
+
+    <h2>Russia-Italy, Italy-Russia: Through the Centuries From Giotto to Malevich</h2>
+
+    <p class="italic-text">It is a remarkable exhibition that explores the rich and dynamic cultural exchanges between Russia and Italy over several centuries. This exhibition showcases masterpieces from renowned artists, tracing the artistic dialogues and influences from the Italian Renaissance to the Russian Avant-Garde.</p>
+    <p class="italic-text">Visitors will journey through time, witnessing the evolution of artistic styles and the profound impact these two nations have had on each other’s cultural landscapes. Featuring works from Giotto, a master of the early Italian Renaissance, to Kazimir Malevich, a pioneer of abstract art in Russia, this exhibition highlights the continuous and reciprocal artistic inspiration that has shaped the art world.</p>
+    <p class="italic-text">Through paintings, sculptures, and multimedia installations, the exhibition offers a unique perspective on the interconnected histories and artistic achievements of these two great cultures.</p>
+
+    <img class="bottom-image" src="https://cdn.tripster.ru/thumbs2/91844230-b2ad-11ed-8339-7ea21234fb5c.1220x600.jpeg" alt="Bottom Image">
+
+    <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
+
+    <!-- Вставляем таблицу -->
+    <table style="border: 2px solid black;">
+        <tbody><tr>
+            <td style="border: 2px solid black;"><img src="query1_iuliia.png" alt="Query 1 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+           </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query2_iuliia.png" alt="Query 2 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">According to the results of the first request, we see that the year of the event is indicated, so the second request was aimed at finding out whether the organizers of the event are specified.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+%3Forganizer+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+    <td style="border: 2px solid black;"><img src="query3_iuliia.png" alt="Query 3 Image" align="left"></td>
+        <td style="border: 2px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">According to the results of the second query, we see that the organizer is not indicated, so I asked ChatGPT who is the organizer of the event - the Pushkin Museum in Moscow and checked if there is an organizer at all in the ArCo ontology with the tag "museo". It turned out that there is not.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Forganizer+%3ForganizerName%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+.%0D%0A++++%3Forganizer+rdfs%3Alabel+%3ForganizerName+.%0D%0A++++FILTER%28REGEX%28%3ForganizerName%2C+%22museo%22%2C+%22i%22%29%29%0D%0A%7D%0D%0AORDER+BY+%3ForganizerName&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+    </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query4_iuliia.png" alt="Query 2 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">So now we can creat a new triplet as it does not yet exist in ontology. The provided RDF representation describes a cultural event titled "Rossija-Italija, Italia-Russia: Skvoz' veka Ot Dzotto do Malevica" organized by "Museo Puškin delle belle arti." The event is identified as a arco:CulturalEvent and includes details such as the title (dc:title), organizer (dc:creator), location (clv:hasSpatialCoverage), and event date (ti:time). Additionally, the location "Mosca" is specified as a clv:GeographicalFeature with a corresponding label (rdfs:label). This structured format allows for precise identification and querying of the event's key attributes within RDF-compatible systems.</p>
+        </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query5_iuliia.png" alt="Query 5 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Now, I have decided to explore the various cultural entities present at my event. My initial search yielded only one painting. Subsequently, I asked ChatGPT about other artworks featured in the exhibition.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FculturalEntity+%3FentityLabel%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++cis%3AinvolvesCulturalEntity+%3FculturalEntity+.%0D%0A++++%3FculturalEntity+rdfs%3Alabel+%3FentityLabel+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0AORDER+BY+%3FentityLabel%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query6_iuliia.png" alt="Query 6 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">One of them turned out to be Paolo Veneziano's painting, "Madonna and Child with Angels" that already exist in ArCo.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0ASELECT+DISTINCT+%3Fsub+%3Fslabel%0D%0AWHERE%0D%0A%7B+%0D%0A++++%3Fcp+a-cd%3AhasSubject+%3Fsub+.%0D%0A++++%3Fsub+a+a-cd%3ASubject+%3B%0D%0A+++++++++rdfs%3Alabel+%3Fslabel+.%0D%0A++++FILTER%28REGEX%28%3Fslabel%2C+%22Paolo+Veneziano%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query7_iuliia.png" alt="Query 7 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Thus, we can enhance the ontology by creating a new triplet to link the cultural entity with the event.</p>
+            </td>
+</tr>
+    </tbody></table>
+</div>
+<body>
+    <div class="navbar">
+        <a href="index.html">Homepage</a>
+        <a href="kristina.html">Kristina</a>
+        <a href="iuliia.html">Iuliia</a>
+        <a href="alena.html">Alena</a>
+        <a href="elena.html">Elena</a>
+        <a href="report.html">Report</a>
+    </div>
+ <div class="content">
+    <h1>IULIIA</h1>
+    <!-- Здесь будет содержимое страницы -->
+    <h1> About the cultural event</h1>
+
+    <h2>Russia-Italy, Italy-Russia: Through the Centuries From Giotto to Malevich</h2>
+
+    <p class="italic-text">It is a remarkable exhibition that explores the rich and dynamic cultural exchanges between Russia and Italy over several centuries. This exhibition showcases masterpieces from renowned artists, tracing the artistic dialogues and influences from the Italian Renaissance to the Russian Avant-Garde.</p>
+    <p class="italic-text">Visitors will journey through time, witnessing the evolution of artistic styles and the profound impact these two nations have had on each other’s cultural landscapes. Featuring works from Giotto, a master of the early Italian Renaissance, to Kazimir Malevich, a pioneer of abstract art in Russia, this exhibition highlights the continuous and reciprocal artistic inspiration that has shaped the art world.</p>
+    <p class="italic-text">Through paintings, sculptures, and multimedia installations, the exhibition offers a unique perspective on the interconnected histories and artistic achievements of these two great cultures.</p>
+
+    <img class="bottom-image" src="https://cdn.tripster.ru/thumbs2/91844230-b2ad-11ed-8339-7ea21234fb5c.1220x600.jpeg" alt="Bottom Image">
+
+    <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
+
+    <!-- Вставляем таблицу -->
+    <table style="border: 2px solid black;">
+        <tbody><tr>
+            <td style="border: 2px solid black;"><img src="query1_iuliia.png" alt="Query 1 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+           </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query2_iuliia.png" alt="Query 2 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">According to the results of the first request, we see that the year of the event is indicated, so the second request was aimed at finding out whether the organizers of the event are specified.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+%3Forganizer+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+    <td style="border: 2px solid black;"><img src="query3_iuliia.png" alt="Query 3 Image" align="left"></td>
+        <td style="border: 2px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">According to the results of the second query, we see that the organizer is not indicated, so I asked ChatGPT who is the organizer of the event - the Pushkin Museum in Moscow and checked if there is an organizer at all in the ArCo ontology with the tag "museo". It turned out that there is not.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Forganizer+%3ForganizerName%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+.%0D%0A++++%3Forganizer+rdfs%3Alabel+%3ForganizerName+.%0D%0A++++FILTER%28REGEX%28%3ForganizerName%2C+%22museo%22%2C+%22i%22%29%29%0D%0A%7D%0D%0AORDER+BY+%3ForganizerName&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+    </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query4_iuliia.png" alt="Query 2 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">So now we can creat a new triplet as it does not yet exist in ontology. The provided RDF representation describes a cultural event titled "Rossija-Italija, Italia-Russia: Skvoz' veka Ot Dzotto do Malevica" organized by "Museo Puškin delle belle arti." The event is identified as a arco:CulturalEvent and includes details such as the title (dc:title), organizer (dc:creator), location (clv:hasSpatialCoverage), and event date (ti:time). Additionally, the location "Mosca" is specified as a clv:GeographicalFeature with a corresponding label (rdfs:label). This structured format allows for precise identification and querying of the event's key attributes within RDF-compatible systems.</p>
+        </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query5_iuliia.png" alt="Query 5 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Now, I have decided to explore the various cultural entities present at my event. My initial search yielded only one painting. Subsequently, I asked ChatGPT about other artworks featured in the exhibition.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FculturalEntity+%3FentityLabel%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++cis%3AinvolvesCulturalEntity+%3FculturalEntity+.%0D%0A++++%3FculturalEntity+rdfs%3Alabel+%3FentityLabel+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0AORDER+BY+%3FentityLabel%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query6_iuliia.png" alt="Query 6 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">One of them turned out to be Paolo Veneziano's painting, "Madonna and Child with Angels" that already exist in ArCo.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0ASELECT+DISTINCT+%3Fsub+%3Fslabel%0D%0AWHERE%0D%0A%7B+%0D%0A++++%3Fcp+a-cd%3AhasSubject+%3Fsub+.%0D%0A++++%3Fsub+a+a-cd%3ASubject+%3B%0D%0A+++++++++rdfs%3Alabel+%3Fslabel+.%0D%0A++++FILTER%28REGEX%28%3Fslabel%2C+%22Paolo+Veneziano%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query7_iuliia.png" alt="Query 7 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Thus, we can enhance the ontology by creating a new triplet to link the cultural entity with the event.</p>
+            </td>
+</tr>
+    </tbody></table>
+</div>
+</body>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -40,25 +302,14 @@
             font-weight: bold;
             color: #000;
         }
-        .section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px); /* высота экрана минус высота навбара */
-            width: 100%;
-            box-sizing: border-box;
-            padding: 20px;
+        .bottom-image {
+            margin-top: 20px; /* добавим отступ от текста */
         }
-        .image, .text {
-            width: 50%;
-            box-sizing: border-box;
+        .italic-text {
+            font-style: italic;
         }
-        .image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .text {
-            text-align: justify;
+        .normal-text {
+            font-weight: normal;
         }
     </style>
 </head>
@@ -71,7 +322,70 @@
         <a href="elena.html">Elena</a>
         <a href="report.html">Report</a>
     </div>
-    <div class="content">
-        <h1>IULIIA</h1>
-        <!-- Здесь будет содержимое страницы -->
-    
+ <div class="content">
+    <h1>IULIIA</h1>
+    <!-- Здесь будет содержимое страницы -->
+    <h1> About the cultural event</h1>
+
+    <h2>Russia-Italy, Italy-Russia: Through the Centuries From Giotto to Malevich</h2>
+
+    <p class="italic-text">It is a remarkable exhibition that explores the rich and dynamic cultural exchanges between Russia and Italy over several centuries. This exhibition showcases masterpieces from renowned artists, tracing the artistic dialogues and influences from the Italian Renaissance to the Russian Avant-Garde.</p>
+    <p class="italic-text">Visitors will journey through time, witnessing the evolution of artistic styles and the profound impact these two nations have had on each other’s cultural landscapes. Featuring works from Giotto, a master of the early Italian Renaissance, to Kazimir Malevich, a pioneer of abstract art in Russia, this exhibition highlights the continuous and reciprocal artistic inspiration that has shaped the art world.</p>
+    <p class="italic-text">Through paintings, sculptures, and multimedia installations, the exhibition offers a unique perspective on the interconnected histories and artistic achievements of these two great cultures.</p>
+
+    <img class="bottom-image" src="https://cdn.tripster.ru/thumbs2/91844230-b2ad-11ed-8339-7ea21234fb5c.1220x600.jpeg" alt="Bottom Image">
+
+    <p class="normal-text">After completing all initial stages and selecting the event, I moved on to creating queries related to my event to enrich the ontology.</p>
+
+    <!-- Вставляем таблицу -->
+    <table style="border: 2px solid black;">
+        <tbody><tr>
+            <td style="border: 2px solid black;"><img src="query1_iuliia.png" alt="Query 1 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Initially, I created a SPARQL query to determine if there is information about the year of my event.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0A%0D%0ASELECT+%3Fevent+%3FeventName+%3Ftime%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++ti%3Atime+%3Ftime+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+           </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query2_iuliia.png" alt="Query 2 Image"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">According to the results of the first request, we see that the year of the event is indicated, so the second request was aimed at finding out whether the organizers of the event are specified.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+ti%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FTI%2F%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0APREFIX+clv%3A+%3Chttps%3A%2F%2Fw3id.org%2Fitalia%2Fonto%2FCLV%2F%3E%0D%0A%0D%0ASELECT+%3Forganizer+%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++rdfs%3Alabel+%3FeventName+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+%3B%0D%0A+++++++++++clv%3AhasSpatialCoverage+%3Fplace+.%0D%0A++++%3Fplace+rdfs%3Alabel+%3Fcity+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+    <td style="border: 2px solid black;"><img src="query3_iuliia.png" alt="Query 3 Image" align="left"></td>
+        <td style="border: 2px solid black; padding-left: 20px;">
+            <p style="margin-bottom: 10px;">According to the results of the second query, we see that the organizer is not indicated, so I asked ChatGPT who is the organizer of the event - the Pushkin Museum in Moscow and checked if there is an organizer at all in the ArCo ontology with the tag "museo". It turned out that there is not.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Forganizer+%3ForganizerName%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++arco%3AhasEventOrganiser+%3Forganizer+.%0D%0A++++%3Forganizer+rdfs%3Alabel+%3ForganizerName+.%0D%0A++++FILTER%28REGEX%28%3ForganizerName%2C+%22museo%22%2C+%22i%22%29%29%0D%0A%7D%0D%0AORDER+BY+%3ForganizerName&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+    </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query4_iuliia.png" alt="Query 2 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">So now we can creat a new triplet as it does not yet exist in ontology. The provided RDF representation describes a cultural event titled "Rossija-Italija, Italia-Russia: Skvoz' veka Ot Dzotto do Malevica" organized by "Museo Puškin delle belle arti." The event is identified as a arco:CulturalEvent and includes details such as the title (dc:title), organizer (dc:creator), location (clv:hasSpatialCoverage), and event date (ti:time). Additionally, the location "Mosca" is specified as a clv:GeographicalFeature with a corresponding label (rdfs:label). This structured format allows for precise identification and querying of the event's key attributes within RDF-compatible systems.</p>
+        </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query5_iuliia.png" alt="Query 5 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Now, I have decided to explore the various cultural entities present at my event. My initial search yielded only one painting. Subsequently, I asked ChatGPT about other artworks featured in the exhibition.</p>
+                <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcultural-event%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0APREFIX+cis%3A+%3Chttp%3A%2F%2Fdati.beniculturali.it%2Fcis%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3FculturalEntity+%3FentityLabel%0D%0AWHERE+%7B%0D%0A++++%3Fevent+a+cis%3ACulturalEvent+%3B%0D%0A+++++++++++cis%3AinvolvesCulturalEntity+%3FculturalEntity+.%0D%0A++++%3FculturalEntity+rdfs%3Alabel+%3FentityLabel+.%0D%0A++++FILTER+%28%3Fevent+%3D+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2Fcc2a13b81e7c225f96471f8a377689cd%3E%29%0D%0A%7D%0D%0AORDER+BY+%3FentityLabel%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query6_iuliia.png" alt="Query 6 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">One of them turned out to be Paolo Veneziano's painting, "Madonna and Child with Angels" that already exist in ArCo.</p>
+            <a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&amp;query=PREFIX+a-cd%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Fcontext-description%2F%3E%0D%0APREFIX+arco%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fontology%2Farco%2F%3E%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0D%0ASELECT+DISTINCT+%3Fsub+%3Fslabel%0D%0AWHERE%0D%0A%7B+%0D%0A++++%3Fcp+a-cd%3AhasSubject+%3Fsub+.%0D%0A++++%3Fsub+a+a-cd%3ASubject+%3B%0D%0A+++++++++rdfs%3Alabel+%3Fslabel+.%0D%0A++++FILTER%28REGEX%28%3Fslabel%2C+%22Paolo+Veneziano%22%2C+%22i%22%29%29%0D%0A%7D%0D%0A&amp;format=text%2Fhtml&amp;timeout=0&amp;signal_void=on" style="color: #00ff00;">RESULTS</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: 2px solid black;"><img src="query7_iuliia.png" alt="Query 7 Image" align="left"></td>
+            <td style="border: 2px solid black; padding-left: 20px;">
+                <p style="margin-bottom: 10px;">Thus, we can enhance the ontology by creating a new triplet to link the cultural entity with the event.</p>
+            </td>
+</tr>
+    </tbody></table>
+</div>
+</body></html>
