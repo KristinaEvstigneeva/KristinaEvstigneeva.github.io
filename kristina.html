@@ -51,9 +51,9 @@
             vertical-align: top;
         }
         .info-table img {
-            width: 8cm;
+            width: auto;
             height: 8cm;
-            object-fit: cover;
+            object-fit: contain;
         }
         .info-table p {
             text-align: justify;
@@ -74,13 +74,16 @@
             border: 1px solid #000; /* черная рамка внутри ячеек */
         }
         .step-table img {
-            width: 8cm;
+            width: auto;
             height: 8cm;
-            object-fit: cover;
+            object-fit: contain;
         }
         .step-table p {
             text-align: justify;
             margin: 0 0 10px 0; /* отступы между абзацами */
+        }
+        .left-align {
+            text-align: left;
         }
     </style>
 </head>
@@ -116,6 +119,7 @@
             </tr>
         </table>
         <h3>STEPS</h3>
+        <p class="left-align"><strong>First Step</strong></p>
         <p class="steps-paragraph">I wanted to begin with retrieving new information about my event and decided to use the following SPARQL query:</p>
         <table class="step-table">
             <tr>
@@ -138,7 +142,7 @@
                         <strong>clvapit:hasSpatialCoverage</strong>: The event has spatial coverage, identified by n6:d3e863b4c91bff6d3a274e923e9e5968.<br>
                         <strong>tiapit:time</strong>: The event took place from 2005 to 2006.<br>
                         <strong>l0:name</strong>: Another name for the event is "Jacopo Bassano".<br>
-                        <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+cis%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2F%3E+%0D%0ADESCRIBE+cis%3Aff397346680a8ea36e725601302e3694%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong></td>
+                        <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+cis%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2F%3E+%0D%0ADESCRIBE+cis%3Aff397346680a8ea36e725601302e3694%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong>
                     </p>
                 </td>
             </tr>
