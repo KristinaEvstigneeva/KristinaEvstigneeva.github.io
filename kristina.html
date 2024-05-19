@@ -49,17 +49,19 @@
         }
         .flex-item {
             width: 300px; /* Ширина контейнера с картинкой, как у Kristina.jpg */
-            text-align: justify;
         }
         .flex-item img {
             width: 100%;
             height: auto;
         }
         .text-container {
-            width: calc(100% - 320px); /* Уменьшение ширины контейнера с текстом на ширину изображения + gap */
+            flex-grow: 1; /* Позволяет текстовому контейнеру занимать оставшееся пространство */
             display: flex;
             align-items: center; /* Выравнивание текста по высоте картинки */
             text-align: justify; /* Выравнивание текста по ширине */
+        }
+        .text-container div {
+            width: 100%; /* Чтобы текст занимал все доступное место */
         }
     </style>
 </head>
