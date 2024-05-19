@@ -144,9 +144,121 @@
                         <strong>l0:name</strong>: Another name for the event is "Jacopo Bassano".<br>
                         <strong><a href="https://dati.cultura.gov.it/sparql?default-graph-uri=&query=PREFIX+cis%3A+%3Chttps%3A%2F%2Fw3id.org%2Farco%2Fresource%2FCulturalEvent%2F%3E+%0D%0ADESCRIBE+cis%3Aff397346680a8ea36e725601302e3694%0D%0A&format=text%2Fhtml&timeout=0&signal_void=on">Result</a></strong>
                     </p>
+              </p>
                 </td>
             </tr>
         </table>
-    </div>
-</body>
-</html>
+        <p class="left-align"><strong>Second Step</strong></p>
+        <p class="steps-paragraph">Enrichment and Comparison Using LLM Models</p>
+       <p class="steps-paragraph">After gathering all the information, the next steps involve enriching the data and utilizing Large Language Models (LLMs) for further analysis. For this comparison, I will employ two models: ChatGPT and Mixtral.</p>
+        <p class="steps-paragraph"> I decided to verify and enhance the extracted information for the "cis:involvesCulturalEntity" relationship.</p>
+        <p class="steps-paragraph"><strong> The first request was the followong:</strong>
+        <br>Cultural Event: Jacopo Bassano 
+<br>Place: Russia
+<br>Q: Which notable pieces by Italian painter Jacopo Bassano reside within cultural institutions based in Russia?
+        <table class="border-table" style="border: 2px solid #000;">
+    <tr>
+        <td style="text-align: center; border: 1px solid #000;"><strong>ChatGPT</strong></td>
+        <td style="text-align: center; border: 1px solid #000;"><strong>Mixtral</strong></td>
+    </tr>
+    <tr>
+        <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+            <p>Jacopo Bassano, an Italian painter from the Renaissance era, has left a mark on art history with his richly detailed and emotionally resonant works. While Bassano's pieces are primarily associated with Italian collections, some notable works have found their way into cultural institutions based in Russia.</p>
+            <p>One of the notable pieces by Jacopo Bassano housed in Russia is "The Adoration of the Shepherds," which is part of the collection at the State Hermitage Museum in Saint Petersburg. This painting showcases Bassano's mastery of light and composition, depicting a tender moment of adoration by shepherds towards the newborn Christ.</p>
+            <p>Another significant work is "Christ in the House of Mary and Martha," which can also be found in the State Hermitage Museum. This painting illustrates a biblical scene with intricate details and expressive characters, reflecting Bassano's skill in capturing human emotions and storytelling.</p>
+            <p>While these are just a couple of examples, they highlight the presence of Jacopo Bassano's art within Russian cultural institutions, enriching the country's artistic heritage with Renaissance masterpieces.</p>
+            <p style="font-size: 0.7em;"><em>(During this search we didn’t have an opportunity to apply different setting for temperature or tokens. As a result the answer is rather ‘’creative’’ and large)</em></p>
+        </td>
+        <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+            <p>I don't have real-time access to databases or art collections, but according to various sources, some of the works attributed to Jacopo Bassano (also known as Jacobello da Ponte) can be found in Russian museums. Here are a few examples:</p>
+            <p>The State Hermitage Museum in Saint Petersburg has several paintings that might be from his workshop, including "The Adoration of Shepherds" and "Christ Carrying the Cross." It is important to note that attribution may vary among different scholars over time due to evolving understandings about artists and their techniques during specific periods. Therefore, it would be best for you to check with these institutions directly regarding any updates on this information.</p>
+            <p style="font-size: 0.7em;"><em>(During this search we had an opportunity to apply different setting for temperature or tokens. As a result the answer shorter and without any additional information that we dint need)</em></p>
+            <tr>
+    <td colspan="2" style="text-align: center; border: 1px solid #000;"><strong>Second question: Can you extract exact cultural entities from this description?</strong></td>
+</tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #000;"><strong>ChatGPT</strong></td>
+    <td style="text-align: center; border: 1px solid #000;"><strong>Mixtral</strong></td>
+</tr>
+    </tr>
+    <tr>
+        <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+          <p>Certainly! From the description provided, the exact cultural entities are:</p>
+<ol>
+    <li>Jacopo Bassano - Italian painter from the Renaissance era.</li>
+    <li><mark style="background-color: #ccffcc;">"The Adoration of the Shepherds"</mark> - Painting by Jacopo Bassano.</li>
+    <li><mark style="background-color: #ccffcc;">State Hermitage Museum</mark> - Cultural institution in Saint Petersburg, Russia.</li>
+    <li><mark style="background-color: #ccffcc;">"Christ in the House of Mary and Martha"</mark> - Painting by Jacopo Bassano, also housed in the <mark style="background-color: #ccffcc;">State Hermitage Museum</mark>.</li>
+</ol>
+</td>
+<td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+    <p>Answer:
+    <br>1) <mark style="background-color: #ccffcc;">The State Hermitage Museum, Saint Petersburg</mark>
+    <br>* Painting: <mark style="background-color: #ccffcc;">The Adoration of Shepherds</mark>
+    <br>2) <mark style="background-color: #ccffcc;">The State Hermitage Museum, Saint Petersburg</mark>
+    <br>* Painting: <mark style="background-color: #ccffcc;">Christ Carrying the Cross</mark></p>
+    <p style="font-size: 0.7em;"><em>(Gave him a prompt - Give me as a result just a list and nothing more.
+    <br>Example:
+    <br>1) "Mona Lisa" by Leonardo da Vinci
+    <br>2) "Starry Night" by Vincent van Gogh
+    <br>3) "The Last Supper" by Leonardo da Vinci) - Few-shot prompting)</em></p>
+</td>
+<tr>
+    <td colspan="2" style="text-align: center; border: 1px solid #000;"><strong>Third question: Could you transform this description into RDF format and use Arco ontology?</strong></td>
+</tr>
+<tr>
+    <td style="text-align: center; border: 1px solid #000;"><strong>ChatGPT</strong></td>
+    <td style="text-align: center; border: 1px solid #000;"><strong>Mixtral</strong></td>
+</tr>
+    <tr>
+        <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+        <ol>
+            <p><li>RDF for "The Adoration of the Shepherds»:</p>
+            </ol>
+<p>@prefix arco:http://www.semanticweb.org/ontologies/2020/2/ArCo#</p>
+<p>@prefix rdf:http://www.w3.org/1999/02/22-rdf-syntax-ns#</p>
+<p>@prefix rdfs:http://www.w3.org/2000/01/rdf-schema#>/p>
+<p><mark style="background-color: #ccffcc;">@prefix ex: <http://example.org/></mark> .
+</p>
+<p>ex:TheAdorationOfTheShepherds a arco:Painting ;</p>
+    <p>rdfs:label "The Adoration of the Shepherds" ;</p>
+    <p>arco:depicts ex:Christ ;</p>
+    <p>arco:createdBy ex:JacopoBassano</p>
+            <p style="font-size: 0.7em;"><em>(After this result I decided to give it a couple of examples of working queries)</em></p>
+<ol start="2"><p><li>RDF for "The Adoration of the Shepherds»:</p></ol>
+<p>PREFIX arco:https://w3id.org/arco/ontology/cultural-event/</p>
+<p>PREFIX rdfs:http://www.w3.org/2000/01/rdf-schema#</p>
+<p>SELECT ?painting ?label</p>
+    <p>WHERE {</p>
+    <p> ?painting a arco:Painting ;rdfs:label "The Adoration of the Shepherds" }</p>
+    <ol start="3"><p><li>RDF for "Christ in the House of Mary and Martha»:</p></ol>
+ <p>PREFIX arco:https://w3id.org/arco/ontology/cultural-event/</p>
+<p>PREFIX rdfs:http://www.w3.org/2000/01/rdf-schema#</p>
+<p>SELECT ?painting ?label</p>
+    <p>WHERE {</p>
+    <p> ?painting a arco:Painting ;rdfs:label "Christ in the House of Mary and Martha" }</p>
+         </td>
+        <td style="text-align: left; border: 1px solid #000; vertical-align: top;">
+            <p>PREFIX xsd: http://www.w3.org/2001/XMLSchema#</p>
+<p>PREFIX anno: http://www.w3.org/2008/annotate#</p>
+<p>PREFIX reco: http://data.recotools.net/ontology#</p>
+<p>PREFIX prop: http://digital.csic.es/aaa/resource/</p>
+<p>PREFIX nt: http://digital.csic.es/tripleStore/namespaces/AAA_ARCO/current/</p>
+<p>PREFIX obo: http://purl.obolibrary.org/obo/</p>
+<p>PREFIX prov: http://www.w3.org/ns/prov#</p>
+<p>PREFIX skos: http://www.w3.org/2004/02/skos/core#</p>
+<p>PREFIX cc: http://creativecommons.org/ns#</p>
+<p>PREFIX wasabi: http://linked.art/datasets/wasabiwiki/namespace/</p>
+<p>PREFIX salsah: http://www.salsah.net/salsah-onto#</p>
+<p>PREFIX crm: http://erlangen-crm.org/current/</p>
+<p>PREFIX edm: http://www.europeana.eu/schemas/edm/</p>
+<p>PREFIX dcterms: http://purl.org/dc/terms/</p>
+<p>PREFIX dctype: http://purl.org/dc/dcmitype/</p>
+<p>PREFIX viaf: http://viaf.org/</p>
+<p>PREFIX geonames: http://sws.geonames.org/</p>
+<p>PREFIX fabio: http://purl.org/spar/fabio/</p>
+<p>PREFIX foaf: http://xmlns.com/foaf/0.1/</p>
+<p>PREFIX bibo: http://purl.org/ontology/bibo/</p>
+<p>PREFIX owl: http://www.w3.org/2002/07/owl#</p>
+<p>PREFIX act: http://activitystrea</p>
+<p style="font-size: 0.7em;"><em>(While the response contained extensive information about prefixes, it didn't yield much relevant content regarding the prompt. Despite adjusting the temperature and tokens settings, the model focused heavily on discussing prefixes. Additionally, even with the prompt guiding it to utilize the 'arco anthology' for the task, the response didn't align with this instruction.)</em></p>
