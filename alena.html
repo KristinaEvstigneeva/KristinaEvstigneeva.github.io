@@ -147,26 +147,19 @@ WHERE {
     <tr>
         <td style="border: 2px solid black; padding: 20px; vertical-align: top;">
 <pre style="font-size: 14px;">
-PREFIX arco: &lt;https://w3id.org/arco/ontology/cultural-event/&gt;
-PREFIX l0: &lt;https://w3id.org/italia/onto/l0/&gt;
-PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
-PREFIX core: &lt;https://w3id.org/arco/ontology/core/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-PREFIX clv: &lt;https://w3id.org/italia/onto/CLV/&gt;
-PREFIX a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt;
+PREFIX a-ce: <https://w3id.org/arco/ontology/cultural-event/> 
+PREFIX cis: <http://dati.beniculturali.it/cis/> 
+PREFIX core: <https://w3id.org/arco/ontology/core/> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/> 
 
-SELECT ?event ?eventLabel ?agent ?agentLabel
+SELECT DISTINCt ?CulturalEntity ?CulturalEventLabel
 WHERE { 
   ?event a cis:CulturalEvent ; 
-         rdfs:label ?eventLabel .
-  OPTIONAL {
-    ?event core:hasAgentRole ?agentRole .
-    ?agentRole core:hasAgent ?agent . 
-    ?agent rdfs:label ?agentLabel .
-  }
-  FILTER (str(?eventLabel) = "Tiziano")
+         cis:involvesCulturalEntity ?CulturalEntity . 
+  ?CulturalEntity rdfs:label ?CulturalEventLabel 
+  FILTER(REGEX(?CulturalEventLabel, " Danaë", "i"))
 }
-LIMIT 10
 </pre>
         </td>
         <td style="border: 2px solid black; padding: 20px;">
